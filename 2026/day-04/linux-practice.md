@@ -24,13 +24,13 @@ Shows CPU and memory usage of running processes.
 
 # Service Checks
 
-## Check Docker Service Status
+## Check SSH Service Status
 
 ```bash
-systemctl status docker
+systemctl status ssh
 ```
 
-Verified that Docker service is active and running.
+Verified that SSH service is active and running.
 
 ---
 
@@ -46,13 +46,13 @@ Used to view active system services.
 
 # Log Checks
 
-## Check Docker Logs
+## Check SSH Logs
 
 ```bash
-journalctl -u docker
+journalctl -u ssh
 ```
 
-Viewed Docker service logs using journalctl.
+Viewed SSH service logs using journalctl.
 
 ---
 
@@ -68,23 +68,23 @@ Displayed the latest 20 log entries from system logs.
 
 # Mini Troubleshooting Practice
 
-## Restart Docker Service
+## Restart SSH Service
 
 ```bash
-sudo systemctl restart docker
+sudo systemctl restart ssh
 ```
 
-Restarted Docker service successfully.
+Restarted SSH service successfully.
 
 ---
 
 ## Verify Service After Restart
 
 ```bash
-systemctl status docker
+systemctl status ssh
 ```
 
-Confirmed Docker service is running properly after restart.
+Confirmed SSH service is running properly after restart.
 
 ---
 
