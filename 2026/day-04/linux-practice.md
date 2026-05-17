@@ -85,7 +85,6 @@ systemctl status ssh
 ```
 
 Confirmed SSH service is running properly after restart.
-
 ---
 
 # Key Learnings
