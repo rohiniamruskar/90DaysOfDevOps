@@ -80,7 +80,7 @@ http://<public-ip>
 
 Successfully accessed Nginx welcome page.
 
-![Nginx Webpage](nginx-webpage-page.png)
+![Nginx Webpage](nginx-welcome-page.png)
 
 ---
 
