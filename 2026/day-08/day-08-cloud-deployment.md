@@ -20,7 +20,7 @@ ssh -i three-tier-app-key.pem ubuntu@<public-ip>
 
 Successfully connected to EC2 instance.
 
-![SSH Connection](images/ssh-connection.png)
+![SSH Connection](ssh-connection.png)
 
 ---
 
@@ -80,7 +80,7 @@ http://<public-ip>
 
 Successfully accessed Nginx welcome page.
 
-![Nginx Webpage](images/nginx-webpage-page.png)
+![Nginx Webpage](nginx-webpage-page.png)
 
 ---
 
@@ -110,7 +110,7 @@ scp -i three-tier-app-key.pem ubuntu@<public-ip>:~/nginx-logs.txt .
 
 Successfully downloaded log file.
 
-![Nginx Logs](images/nginx-logs.png)
+![Nginx Logs](nginx-logs.png)
 
 ---
 
