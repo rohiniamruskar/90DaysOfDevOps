@@ -15,7 +15,7 @@
 ## Connect to Server
 
 ```bash
-ssh -i three-tier-app-key.pem ubuntu@<public-ip>
+ssh -i <your.pem> ubuntu@<public-ip>
 ```
 
 Successfully connected to EC2 instance.
