@@ -105,7 +105,7 @@ sudo cat /var/log/nginx/access.log > nginx-logs.txt
 ## Download Logs to Local Machine
 
 ```bash
-scp -i three-tier-app-key.pem ubuntu@<public-ip>:~/nginx-logs.txt .
+scp -i <your.pem> ubuntu@<public-ip>:~/nginx-logs.txt .
 ```
 
 Successfully downloaded log file.
@@ -142,7 +142,7 @@ scp
 - Fixed using:
 
 ```bash
-chmod 400 three-tier-app-key.pem
+chmod 400 <your.pem>
 ```
 
 ---
