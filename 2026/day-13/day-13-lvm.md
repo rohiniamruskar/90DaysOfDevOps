@@ -57,7 +57,7 @@ df -h
 ## Create Virtual Disk
 
 ```bash
-dd if=/dev/zero of=/tmp/disk1.img bs=1M count=1024
+dd if=/dev/zero of=/tmp/disk1.img bs=1M count=300
 ```
 
 ![Create Disk](images/create-disk.png)
@@ -87,7 +87,7 @@ losetup -a
 ## Create Physical Volume
 
 ```bash
-pvcreate /dev/loop0
+pvcreate /dev/loop4
 ```
 
 ![PV Create](images/pv-create.png)
@@ -109,7 +109,7 @@ pvs
 ## Create Volume Group
 
 ```bash
-vgcreate devops-vg /dev/loop0
+vgcreate devops-vg /dev/loop4
 ```
 
 ![VG Create](images/vg-create.png)
@@ -131,7 +131,7 @@ vgs
 ## Create Logical Volume
 
 ```bash
-lvcreate -L 500M -n app-data devops-vg
+lvcreate -L 300M -n app-data devops-vg
 ```
 
 ![LV Create](images/lv-create.png)
@@ -195,7 +195,7 @@ df -h /mnt/app-data
 ## Extend Logical Volume
 
 ```bash
-lvextend -L +200M /dev/devops-vg/app-data
+lvextend -L +90M /dev/devops-vg/app-data
 ```
 
 ![Extend Volume](images/extend-volume.png)
