@@ -8,47 +8,28 @@
 lsblk
 ```
 
-![lsblk Output](images/lsblk-output.png)
-
----
-
 ## Check Physical Volumes
 
 ```bash
 pvs
 ```
-
-![PVS Output](images/pvs-output.png)
-
----
-
 ## Check Volume Groups
 
 ```bash
 vgs
 ```
-
-![VGS Output](images/vgs-output.png)
-
----
-
 ## Check Logical Volumes
 
 ```bash
 lvs
 ```
-
-![LVS Output](images/lvs-output.png)
-
----
-
 ## Check Disk Usage
 
 ```bash
 df -h
 ```
 
-![DF Output](images/df-output.png)
+![DF Output](task1.png)
 
 ---
 
@@ -59,48 +40,28 @@ df -h
 ```bash
 dd if=/dev/zero of=/tmp/disk1.img bs=1M count=300
 ```
-
-![Create Disk](images/create-disk.png)
-
----
-
 ## Attach Loop Device
 
 ```bash
 losetup -fP /tmp/disk1.img
 ```
-
-![Loop Setup](images/loop-setup.png)
-
----
-
 ## Verify Loop Device
 
 ```bash
 losetup -a
 ```
-
-![Loop Verify](images/loop-verify.png)
-
----
-
 ## Create Physical Volume
 
 ```bash
 pvcreate /dev/loop4
 ```
-
-![PV Create](images/pv-create.png)
-
----
-
 ## Verify Physical Volume
 
 ```bash
 pvs
 ```
 
-![PVS Verify](images/pvs-verify.png)
+![PVS Verify](task2.png)
 
 ---
 
@@ -111,18 +72,12 @@ pvs
 ```bash
 vgcreate devops-vg /dev/loop4
 ```
-
-![VG Create](images/vg-create.png)
-
----
-
 ## Verify Volume Group
 
 ```bash
 vgs
 ```
-
-![VGS Verify](images/vgs-verify.png)
+![PVS Verify](task3.png)
 
 ---
 
@@ -133,18 +88,13 @@ vgs
 ```bash
 lvcreate -L 300M -n app-data devops-vg
 ```
-
-![LV Create](images/lv-create.png)
-
----
-
 ## Verify Logical Volume
 
 ```bash
 lvs
 ```
 
-![LVS Verify](images/lvs-verify.png)
+![LVS Verify](task4.png)
 
 ---
 
@@ -155,30 +105,16 @@ lvs
 ```bash
 mkfs.ext4 /dev/devops-vg/app-data
 ```
-
-![Format Volume](images/format-volume.png)
-
----
-
 ## Create Mount Directory
 
 ```bash
 mkdir -p /mnt/app-data
 ```
-
-![Mount Directory](images/mount-directory.png)
-
----
-
 ## Mount Logical Volume
 
 ```bash
 mount /dev/devops-vg/app-data /mnt/app-data
 ```
-
-![Mount Volume](images/mount-volume.png)
-
----
 
 ## Verify Mounted Storage
 
@@ -186,7 +122,7 @@ mount /dev/devops-vg/app-data /mnt/app-data
 df -h /mnt/app-data
 ```
 
-![Mounted Verify](images/mounted-verify.png)
+![Mount Volume](task5.png)
 
 ---
 
@@ -197,28 +133,18 @@ df -h /mnt/app-data
 ```bash
 lvextend -L +90M /dev/devops-vg/app-data
 ```
-
-![Extend Volume](images/extend-volume.png)
-
----
-
 ## Resize Filesystem
 
 ```bash
 resize2fs /dev/devops-vg/app-data
 ```
-
-![Resize Filesystem](images/resize-filesystem.png)
-
----
-
 ## Verify Extended Storage
 
 ```bash
 df -h /mnt/app-data
 ```
 
-![Extended Verify](images/extended-verify.png)
+![Extended Verify](task6.png)
 
 ---
 
